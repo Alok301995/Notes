@@ -37,7 +37,8 @@ export default function Login({ navigation }) {
             </View>
             {/* Button Container */}
             <View style={[styles.buttonContainer]}>
-                <TouchableOpacity style={[styles.buttonInnerContainer, { backgroundColor: "#0A6EBD"}]}>
+                <TouchableOpacity style={[styles.buttonInnerContainer, { backgroundColor: "#0A6EBD"}]}
+                >
                     <Text style={[styles.button, styles.loginButton]}>Login</Text>
                 </TouchableOpacity>
                 <HorizontalLine title="OR" />

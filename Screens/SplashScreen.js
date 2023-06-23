@@ -7,9 +7,15 @@ import React, { useEffect } from 'react'
 
 export default function SplashScreen({ navigation }) {
 
+  const isLogin = true
+
   useEffect(() => {
     setTimeout(() => {
-      navigation.navigate('Login')
+      if (isLogin) {
+        navigation.replace('HomeNav')
+        return
+      }
+      navigation.replace('Login')
     }, 2000)
   }, [])
 

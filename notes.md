@@ -6,3 +6,6 @@
 
 
 Screens : Login , Register, Intro Screen
+
+
+Main Color : #0A6EBD

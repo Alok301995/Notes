@@ -6,6 +6,7 @@ import Register from '../Screens/Register'
 import ForgetPass from '../Screens/ForgetPass'
 import SplashScreen from '../Screens/SplashScreen'
 import CreatePassword from '../Screens/CreatePassword'
+import HomeTab from './HomeTab'
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -40,6 +41,7 @@ export default function LoginNavigator() {
                     title: 'Back to Login',
                 }
             }/>
+            <Screen name="HomeNav" component={HomeTab} options={{headerShown:false}} />
 
         </Navigator>
     )
