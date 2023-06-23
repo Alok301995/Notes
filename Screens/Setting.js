@@ -28,6 +28,24 @@ export default function Setting() {
             </TouchableOpacity>
       </View>
       <View style={[styles.appSettingContainer]}>
+            <Text style={[styles.heading]}>App Setting</Text>
+            <View style={[styles.optionContainer]}>
+                <TouchableOpacity style={[styles.option]}>
+                    <Feather name="lock" size={22} color="black" />
+                    <Text style={[styles.optionText]}>Change Password</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={[styles.option]}>
+                    <Feather name="file-text" size={22} color="black" />
+                    <Text style={[styles.optionText]}>Text Size</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={[styles.option]}>
+                    <Feather name="bell" size={22} color="black" />
+                    <Text style={[styles.optionText]}>Notifications</Text>
+                </TouchableOpacity>
+
+                
+
+            </View>
 
       </View>
       <View style={[styles.logoutContainer]}>
@@ -45,8 +63,8 @@ const styles = StyleSheet.create({
     },
     userInfoContainer: {
         flex: 1,
-        borderWidth: 1,
-        borderColor: 'black',
+        // borderWidth: 1,
+        // borderColor: 'black',
         padding: 10,
 
     },
@@ -55,6 +73,7 @@ const styles = StyleSheet.create({
         flex: 2,
         justifyContent: 'center',
         alignItems: 'center',
+        marginLeft: "5%",
     },
 
     image: {
@@ -91,11 +110,11 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#0A6EBD',
         alignItems: 'center',
-        borderRadius: 10,
+        borderRadius: 20,
         // padding: 10,
         justifyContent: 'center',
         margin: 10,
-        width: "100%",
+        width: "90%",
         alignSelf: 'center',
 
     },
@@ -109,14 +128,42 @@ const styles = StyleSheet.create({
 
     appSettingContainer: {
         flex: 2,
-        borderWidth: 1,
-        borderColor: 'black',
+        // borderWidth: 1,
+        // borderColor: 'black',
+        padding: 10,
     },
+    heading: {
+        color: 'gray',
+        marginLeft: "2%",
+    },
+    optionContainer: {
+        // borderWidth: 1,
+        // borderColor: 'black',
+        margin: 10,
+        padding: 10,
+        
+    },
+    option: {
+        flexDirection: 'row',
+        marginVertical: "5%",
+        // borderWidth: 1,
+        // borderColor: 'gray',
+    },
+    optionText: {
+        fontSize: 18,
+        marginLeft: 10,
+        fontWeight: 'bold',
+    },
+
+
+
     logoutContainer: {
-        flex: 2,
+        flex: 3,
         borderWidth: 1,
         borderColor: 'black',
     },
+
+
 
 
 

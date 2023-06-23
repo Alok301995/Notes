@@ -7,7 +7,7 @@ import React, { useEffect } from 'react'
 
 export default function SplashScreen({ navigation }) {
 
-  const isLogin = true
+  const isLogin = false
 
   useEffect(() => {
     setTimeout(() => {
