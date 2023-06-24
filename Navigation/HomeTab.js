@@ -1,14 +1,18 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-const { Navigator, Screen } = createBottomTabNavigator()
+import { Ionicons } from '@expo/vector-icons';
+
+// Component Imports
 import Home from '../Screens/HomeScreen'
-import CreateNote from '../Screens/CreateNote'
+import CreateNoteStack from './CreateNoteStack';
 import FinishedNotes from '../Screens/FinishedNotes'
 import SearchScreen from '../Screens/SearchScreen'
 import Setting from '../Screens/Setting'
-import { Ionicons } from '@expo/vector-icons';
 
+
+
+const { Navigator, Screen } = createBottomTabNavigator()
 
 
 export default function HomeTab() {
@@ -59,7 +63,7 @@ export default function HomeTab() {
                     />
                 ),
             }} />
-            <Screen name="Add" component={CreateNote} options={{
+            <Screen name="Add" component={CreateNoteStack} options={{
                 headerShown: false,
                 tabBarIcon: ({ focused, color, size }) => (
                     <Ionicons

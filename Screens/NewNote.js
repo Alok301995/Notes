@@ -1,11 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-
-export default function CreateNote() {
+export default function NewNote() {
   return (
     <View>
-       <Text>CreateNote</Text>
+      <Text>NewNote</Text>
     </View>
   )
 }
