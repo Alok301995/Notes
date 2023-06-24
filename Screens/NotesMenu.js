@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import NotesTile from '../Components/NotesTile'
+import { CommonActions } from '@react-navigation/native';
 
 
 export default function NotesMenu({ navigation }) {
@@ -11,14 +12,13 @@ export default function NotesMenu({ navigation }) {
         <Text style={[styles.headingText]}>What Do You Want to Note?</Text>
       </View>
       <View style={[styles.tiles]}>
-          <NotesTile
-            imageSource="https://cdn-icons-png.flaticon.com/128/427/427735.png"
-            title="Intrested Ideas"
-            description="Use free text area, feel free to write it all"
-            backgroundColor={'#9384D1'}
-            onPress={() => navigation.navigate('NewNote')}
-            />
-
+        <NotesTile
+          imageSource="https://cdn-icons-png.flaticon.com/128/427/427735.png"
+          title="Intrested Ideas"
+          description="Use free text area, feel free to write it all"
+          backgroundColor={'#9384D1'}
+          onPress={() => navigation.navigate('NewNote')}
+        />
 
         <NotesTile
           imageSource="https://cdn-icons-png.flaticon.com/128/1170/1170576.png"
@@ -26,31 +26,31 @@ export default function NotesMenu({ navigation }) {
           description="Use Checklist, so you won't miss anything"
           backgroundColor={'#088395'}
           onPress={() => navigation.navigate('NewNote')}
-          />
+        />
 
         <NotesTile
           imageSource="https://cdn-icons-png.flaticon.com/128/3900/3900164.png"
           title="Goals"
           description="Near/Future goals, notes and keep focus"
-          backgroundColor={'#FF6D60'} 
+          backgroundColor={'#FF6D60'}
           onPress={() => navigation.navigate('NewNote')}
-          />
+        />
 
         <NotesTile
           imageSource="https://cdn-icons-png.flaticon.com/128/4489/4489706.png"
           title="Guidance"
           description="Create guidance for routine activities"
-          backgroundColor={'#6DA9E4'} 
+          backgroundColor={'#6DA9E4'}
           onPress={() => navigation.navigate('NewNote')}
-          />
+        />
 
         <NotesTile
           imageSource="https://cdn-icons-png.flaticon.com/128/3176/3176366.png"
           title="Routine Tasks"
           description="Checklist with sub-checklist"
-          backgroundColor={'#F6BA6F'} 
+          backgroundColor={'#F6BA6F'}
           onPress={() => navigation.navigate('NewNote')}
-          />
+        />
       </View>
     </View>
   )
