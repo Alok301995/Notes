@@ -1,51 +1,77 @@
-import { StyleSheet, Text, View, TextInput,KeyboardAvoidingView } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity, Modal, Image, StatusBar } from 'react-native'
 import React, { useEffect, useState } from 'react'
-
+import ModalComponent from '../Components/Modal'
+import NoteForm from '../Components/NoteForm'
 
 
 export default function NewNote({ navigation, options }) {
 
+  const [modalVisible, setModalVisible] = useState(false)
+
 
   return (
-    <View style={[styles.container]}>
-      <View style={[styles.inputContainer ]}>
-        <TextInput 
-        multiline 
-        style={[styles.textInput , styles.textInputTitle]} 
-        placeholder={"Title"}
+    <View style={[styles.container, styles.fill]}>
 
-        on
-        ></TextInput>
+      <View style={[styles.noteFormContainer]}>
+        <NoteForm />
       </View>
-      <View style={[styles.inputContainer ]}>
-        <TextInput multiline style={[styles.textInput, styles.textInputNote]} placeholder='Write Your Notes here...' ></TextInput>
-      </View>
-      
+      <TouchableOpacity style={[styles.buttonContainer]}
+        onPress={() => {
+          setModalVisible(true)
+        }}
+      >
+        <Image source={{ uri: "https://cdn-icons-png.flaticon.com/128/1828/1828817.png" }} style={styles.buttonImage} />
+      </TouchableOpacity>
+      <Modal
+        animationType="fade"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => setModalVisible(false)}
+      >
+        <View style={[styles.modelContainer]}>
+          <ModalComponent modalVisibility ={setModalVisible} />
+        </View>
 
+      </Modal>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
-  container: {
+
+  fill: {
     flex: 1,
-    backgroundColor: '#fff',
   },
-  textInput: {
+  container: {
+    // borderWidth: 1,
+    // borderColor: "red",
+  },
+  noteFormContainer: {
+    flex: 1,
     borderWidth: 1,
-    borderColor: 'black',
-    padding: 10,
+    borderColor: "blue",
+    backgroundColor: "white",
   },
-  textInputTitle: {
-    fontSize: 40,
+  buttonContainer: {
+    position: "absolute",
+    right: 0,
+    bottom: 0,
+    transform: [{ translateX: -40 }, { translateY: -40 }],
   },
-  textInputNote: {
-    fontSize: 20,
+  buttonImage: {
+    width: 50,
+    height: 50,
+    resizeMode: "contain",
   },
-  inputContainer: {
-    borderWidth: 1,
-    borderColor: 'black',
-    paddingHorizontal: "2%",
-    paddingVertical: "1%",
-  }
+  modelContainer: {
+    justifyContent: "center",
+    alignItems: "center",
+    // borderWidth: 2,
+    // borderColor: "blue",
+    backgroundColor: "rgba(0,0,0,0.4)",
+    flex: 1,
+  },
+
+
+
 })

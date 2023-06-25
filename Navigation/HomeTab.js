@@ -2,7 +2,6 @@ import { StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Ionicons } from '@expo/vector-icons';
-import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 // Component Imports
 import Home from '../Screens/HomeScreen'
 import FinishedNotes from '../Screens/FinishedNotes'
